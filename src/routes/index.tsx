@@ -4,16 +4,16 @@ import { Link } from '@builder.io/qwik-city';
 
 export default component$(() => {
   return (
-    <div class="container px-4 py-4">
+    <>
       <h1>
         Welcome to Qwik <span class="lightning">⚡️</span>
       </h1>
 
       
-      <Link class="mindblow" href="/flower/">
+      <Link class="btn" href="/hello/">
         Blow my mind 🤯
       </Link>
-    </div>
+    </>
   );
 });
 

@@ -29,10 +29,10 @@ export default component$(() => {
   });
   useContextProvider(ThemeContext, state);
   return (
-    <div data-theme={state.theme}>
+    <div data-theme={state.theme} class="min-h-screen">
       <main>
         <Header />
-        <section>
+        <section class="container px-4 py-4 min-h-[520px]">
           <Slot />
         </section>
       </main>
