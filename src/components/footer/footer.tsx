@@ -7,11 +7,11 @@ export default component$(() => {
   return (
     <footer class="footer p-10 bg-neutral text-neutral-content">
       <div>
-        <span class="footer-title">Services</span>
-        <a class="link link-hover">Branding</a>
-        <a class="link link-hover">Design</a>
-        <a class="link link-hover">Marketing</a>
-        <a class="link link-hover">Advertisement</a>
+        <span class="footer-title">Pages</span>
+        <a href="/" class="link link-hover">Home</a>
+        <a href="/hello" class="link link-hover">Hello</a>
+        <a href="/hellomd" class="link link-hover">Hello md</a>
+        <a href="/blog" class="link link-hover">Blog</a>
       </div>
       <div>
         <span class="footer-title">Company</span>

@@ -2,11 +2,21 @@
 # File: src/routes/hello/index.mdx
 title: Hello World Title
 ---
-# Last year’s snowfall
+export const year = new Date().getYear()+1900;
 
+<article class="prose prose-headings:underline prose-a:text-blue-600">
+  
+# Title 
 
-This is a simple hello world component.
+Paragraph one content
 
+## Second title
 
-<button class="btn">ciaone</button>
+1. [Qwik](https://qwik.builder.io/) link one
+2. [Tailwind](https://tailwindcss.com/) link two
+
+Further paragraph content
+
+Var: {year}
+</article>
 

@@ -1,0 +1,24 @@
+[
+  {
+    "id": 1,
+    "title": "Top tube bag",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla! Maiores et perferendis eaque, exercitationem praesentium nihil.",
+    "author": "John Adam",
+    "avatar": "/assets/images/user.png",
+    "slug": "what-is-qwik",
+    "image": "/assets/images/mountains.jpg",
+    "cta": "",
+    "created_at": "Jan 23"
+  },
+  {
+    "id": 2,
+    "title": "Seatpost bag",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla! Maiores et perferendis eaque, exercitationem praesentium nihil.",
+    "author": "Mandy Lane",
+    "avatar": "/assets/images/user.png",
+    "slug": "building-a-blog-with-qwik-city",
+    "image": "/assets/images/webb.jpg",
+    "cta": "",
+    "created_at": "Feb 23"
+  }
+]
