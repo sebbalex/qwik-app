@@ -1,5 +1,10 @@
 import { $, component$ } from "@builder.io/qwik";
 import { Link } from "@builder.io/qwik-city";
+import { Facebook } from "~/components/icons/facebook";
+import { Instagram } from "~/components/icons/instagram";
+import { Mail } from "~/components/icons/mail";
+import { Pinterest } from "~/components/icons/pinterest";
+import { Sharing } from "~/components/icons/sharing";
 import posts from "./post.json";
 
 export default component$(() => {
@@ -31,8 +36,25 @@ export default component$(() => {
 
   const blogs: Blogs[] = posts;
   return (
-    <div class="p-3 lg:p-8 gap-8 w-full max-w-full my-0 mx-auto flex flex-col justify-center items-center">
-      <h1 class="text-3xl">Posts</h1>
+    <div class="p-3 lg:p-8 gap-8 w-full max-w-full my-0 mx-auto flex flex-col">
+      <h1 class="text-3xl">
+        Best bikepacking bags 2023 - top tube, seatpost and much more to enjoy
+        your trip with your bike
+      </h1>
+      <h2 class="text-sm">
+        By <a href="#">user</a> published Feb 7, 2023
+      </h2>
+      <h3 class="text-lg font-light">
+        Best bikepacking bags 2023 - top tube, seatpost and much more to enjoy
+        your trip with your bike
+      </h3>
+      <div id="social" class="flex">
+        <Facebook />
+        <Instagram />
+        <Pinterest />
+        <Mail />
+        <Sharing />
+      </div>
       {blogs.map((blog) => (
         <>
           <div class="card w-4/5 bg-base-100 shadow-xl">
@@ -90,10 +112,7 @@ export default component$(() => {
                 ))}
               </div>
               <div class="card-actions justify-end">
-                <img
-                  class="w-15 h-7 mt-4"
-                  src="/assets/images/amazon.png"
-                />
+                <img class="w-15 h-7 mt-4" src="/assets/images/amazon.png" />
                 <a href={blog.cta} class="btn btn-primary">
                   Buy
                 </a>
