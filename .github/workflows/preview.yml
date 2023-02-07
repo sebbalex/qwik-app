@@ -14,6 +14,8 @@ jobs:
       - run: npm ci
       - run: npm run build
       - run: |
+          git remote set-url origin https://git:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git
+
           npm run deploy -m "Automated deployment: ${CIRCLE_SHA1} [ci skip]"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
