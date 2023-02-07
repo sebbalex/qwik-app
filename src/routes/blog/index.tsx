@@ -91,7 +91,7 @@ export default component$(() => {
               </div>
               <div class="card-actions justify-end">
                 <img
-                  class="w-40 h-15 rounded-full mr-4"
+                  class="w-15 h-7 mt-4"
                   src="/assets/images/amazon.png"
                 />
                 <a href={blog.cta} class="btn btn-primary">
