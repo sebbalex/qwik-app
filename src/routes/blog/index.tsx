@@ -58,7 +58,7 @@ export default component$(() => {
       </div>
       {blogs.map((blog) => (
         <>
-          <div class="card w-4/5 bg-base-100 shadow-xl">
+          <div class="card w-full bg-base-100 shadow-xl">
             <figure>
               <Link key={blog.id} href={blog.slug}>
                 <img src={blog.image} alt={blog.title} />
