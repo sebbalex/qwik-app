@@ -25,6 +25,7 @@ export default component$(() => {
     review: string;
     stars: number;
     tags: string[];
+    isNew: boolean;
   }
   const stars = $((s: number) => {
     let ss = "";
@@ -67,7 +68,7 @@ export default component$(() => {
               <Link key={blog.id} href={blog.slug}>
                 <h2 class="card-title pb-7">
                   {blog.title}
-                  <div class="badge badge-secondary">NEW</div>
+                  {blog.isNew && <div class="badge badge-secondary">NEW</div>}
                 </h2>
                 <p>{blog.description}</p>
                 <hr class="pt-5" />
