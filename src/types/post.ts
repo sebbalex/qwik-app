@@ -1,5 +1,9 @@
 import type { Component } from "@builder.io/qwik";
 
+export interface IndexData {
+  title: string;
+  description: string;
+}
 export interface Data {
   [key: string]: {
     Frontmatter: Component<{}>;
@@ -7,7 +11,7 @@ export interface Data {
     slug: string;
     title: string;
     description: string;
-  }
+  };
 }
 
 export type langs = "it" | "en";

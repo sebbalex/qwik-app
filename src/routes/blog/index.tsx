@@ -1,13 +1,12 @@
 import type { JSXNode } from "@builder.io/qwik";
 import { component$ } from "@builder.io/qwik";
-import data from "../../data";
+import {data, indexData} from "../../data";
 
 export const getPages = () => {
   const links: JSXNode[] = [];
   for (const [, v] of Object.entries(data)) {
-    const link = `/blog/${v.slug}/`;
     links.push(
-      <a href={link} class="btn">
+      <a href={`/blog/${v.slug}/`} class="btn">
         {v.title}
       </a>
     );
@@ -18,8 +17,16 @@ export const getPages = () => {
 export default component$(() => (
   <>
     <h1 class="text-3xl pb-5">blog list</h1>
-    <div class="flex flex-col space-y-5 w-96">
-      {getPages()}
-    </div>
+    <div class="flex flex-col space-y-5 w-96">{getPages()}</div>
   </>
 ));
+
+export const head = {
+  title: indexData.title,
+  meta: [
+    {
+      name: "description",
+      content: indexData.description,
+    },
+  ],
+};
