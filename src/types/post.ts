@@ -2,10 +2,11 @@ import type { Component } from "@builder.io/qwik";
 
 export interface Data {
   [key: string]: {
-    frontmatter: Component<{}>;
+    Frontmatter: Component<{}>;
     posts: Post[];
     slug: string;
     title: string;
+    description: string;
   }
 }
 
