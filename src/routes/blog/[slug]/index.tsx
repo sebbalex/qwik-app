@@ -1,55 +1,52 @@
-import { $, component$ } from "@builder.io/qwik";
+import { component$ } from "@builder.io/qwik";
+import type { RequestHandler } from "@builder.io/qwik-city";
 import { Link } from "@builder.io/qwik-city";
 import { Facebook } from "~/components/icons/facebook";
 import { Instagram } from "~/components/icons/instagram";
 import { Mail } from "~/components/icons/mail";
 import { Pinterest } from "~/components/icons/pinterest";
 import { Sharing } from "~/components/icons/sharing";
-import posts from "./posts.json";
+import type { Post } from "~/types/post";
+import all_data from "../../../data";
+
+export let year = "2023";
+export let slug = "";
+interface RequestData {
+  slug: string;
+}
+export const onGet: RequestHandler<RequestData> = async ({ params }) => {
+  slug = params.slug;
+  year = slug.match(/\d{4}$/) ? [slug.match(/\d{4}$/)].toString() : year;
+};
 
 export default component$(() => {
-  interface Blogs {
-    id: number;
-    title: string;
-    description: string;
-    specification: string;
-    author: string;
-    slug: string;
-    image: string;
-    avatar: string;
-    cta: string;
-    motto: string;
-    created_at: string;
-    pros: string[];
-    cons: string[];
-    review: string;
-    stars: number;
-    tags: string[];
-    isNew: boolean;
-  }
-  const stars = $((s: number) => {
+  const data = all_data[year];
+
+  const stars = (s: number) => {
     let ss = "";
-    for (let i = 0; i < s; i++) {
-      ss += "⭐️";
+    for (let i = 1; i <= 10; i++) {
+      ss += `<input type="radio" class="bg-yellow-300 mask mask-star-2 mask-half-${
+        (i % 2 === 0 ? 1 : 0) + 1
+      }" ${i === s * 2 ? "checked" : ""} />`;
     }
     return ss;
-  });
+  };
 
-  const blogs: Blogs[] = posts;
+  const blogs: Post[] = data.posts;
   return (
     <div class="p-3 lg:p-8 gap-8 w-full max-w-full my-0 mx-auto flex flex-col">
       <h1 class="text-3xl">
-        Best bikepacking bags 2023 - top tube, seatpost and much more to enjoy
+        Best bikepacking bags {year} - top tube, seatpost and much more to enjoy
         your trip with your bike
       </h1>
       <h2 class="text-sm">
         By <a href="#">user</a> published Feb 7, 2023
       </h2>
       <h3 class="text-lg font-light">
-        Best bikepacking bags 2023 - top tube, seatpost and much more to enjoy
+        Best bikepacking bags {year} - top tube, seatpost and much more to enjoy
         your trip with your bike
       </h3>
-      <div id="social" class="flex">
+      <div id="social" class="flex space-x-1">
         <Facebook />
         <Instagram />
         <Pinterest />
@@ -68,9 +65,9 @@ export default component$(() => {
               <Link key={blog.id} href={blog.slug}>
                 <h2 class="card-title pb-7">
                   {blog.title}
-                  {blog.isNew && <div class="badge badge-secondary">NEW</div>}
+                  {blog.isNew && <div class="badge badge-secondary uppercase">new</div>}
                 </h2>
-                <p>{blog.description}</p>
+                <p>{blog.description.it}</p>
                 <hr class="pt-5" />
                 <h2 class="card-title">Specificaition</h2>
                 <p>{blog.specification}</p>
@@ -93,7 +90,10 @@ export default component$(() => {
                 </ul>
                 <hr class="pt-5" />
                 <h2 class="card-title">Review</h2>
-                {stars(blog.stars)}
+                <div
+                  class="rating rating-md rating-half"
+                  dangerouslySetInnerHTML={stars(blog.stars)}
+                />
                 <p>{blog.review}</p>
               </Link>
               <div class="flex items-center pt-5">
@@ -113,10 +113,17 @@ export default component$(() => {
                 ))}
               </div>
               <div class="card-actions justify-end">
-                <img class="w-15 h-7 mt-4" src="/assets/images/amazon.png" />
-                <a href={blog.cta} class="btn btn-primary">
-                  Buy
-                </a>
+                {blog.cta && (
+                  <>
+                    <img
+                      class="w-15 h-7 mt-4"
+                      src="/assets/images/amazon.png"
+                    />
+                    <a href={blog.cta} class="btn btn-primary">
+                      Buy
+                    </a>
+                  </>
+                )}
               </div>
             </div>
           </div>
@@ -125,3 +132,13 @@ export default component$(() => {
     </div>
   );
 });
+
+export const head = {
+  title: `Best bike packing gears ${year}`,
+  meta: [
+    {
+      name: "description",
+      content: `Best bikepacking bags ${year} - top tube, seatpost and much more to enjoy your trip with your bike`,
+    },
+  ],
+};

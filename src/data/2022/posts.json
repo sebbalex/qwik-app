@@ -1,0 +1,24 @@
+[
+  {
+    "id": 1,
+    "title": "Top tube bag",
+    "description": {
+      "it": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla! Maiores et perferendis eaque, exercitationem praesentium nihil.",
+      "en": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla! Maiores et perferendis eaque, exercitationem praesentium nihil."
+    },
+    "specification": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla! Maiores et perferendis eaque, exercitationem praesentium nihil.",
+    "author": "John Adam",
+    "avatar": "/assets/images/user.png",
+    "slug": "#",
+    "image": "/assets/images/mountains.jpg",
+    "cta": "",
+    "created_at": "Jan 23",
+    "motto": "The best bikepacking bags overall",
+    "pros": ["light", "price", "beauty"],
+    "cons": ["difficult to mount", "spaces", "tiny"],
+    "review": "Lorem ipsum dolor sit amet, consectetur adipisicing elit",
+    "stars": 3.5,
+    "tags": ["top tube", "light"],
+    "isNew": false
+  }
+]
