@@ -1,9 +1,20 @@
-import { component$, createContext, useClientEffect$, useContextProvider, useStore, useStyles$ } from '@builder.io/qwik';
-import { QwikCityProvider, RouterOutlet, ServiceWorkerRegister } from '@builder.io/qwik-city';
-import { isBrowser } from '@builder.io/qwik/build';
-import { RouterHead } from './components/router-head/router-head';
+import {
+  component$,
+  createContext,
+  useClientEffect$,
+  useContextProvider,
+  useStore,
+  useStyles$,
+} from "@builder.io/qwik";
+import {
+  QwikCityProvider,
+  RouterOutlet,
+  ServiceWorkerRegister,
+} from "@builder.io/qwik-city";
+import { isBrowser } from "@builder.io/qwik/build";
+import { RouterHead } from "./components/router-head/router-head";
 
-import globalStyles from './global.css?inline';
+import globalStyles from "./global.css?inline";
 
 type Theme = "dark" | "light";
 export interface ThemeState {
@@ -11,23 +22,15 @@ export interface ThemeState {
 }
 export const ThemeContext = createContext<ThemeState>("theme");
 export default component$(() => {
-  /**
-   * The root of a QwikCity site always start with the <QwikCityProvider> component,
-   * immediately followed by the document's <head> and <body>.
-   *
-   * Dont remove the `<head>` and `<body>` elements.
-   */
   useStyles$(globalStyles);
   const defaultTheme: Theme = "light";
   const state = useStore<ThemeState>({
-    theme: "dark",
+    theme: defaultTheme,
   });
   useClientEffect$(() => {
     if (isBrowser) {
       state.theme =
-        localStorage.getItem("theme") === "light"
-          ? "light"
-          : "dark" || defaultTheme;
+        localStorage.getItem("theme") === "light" ? "light" : "dark";
     }
   });
   useContextProvider(ThemeContext, state);
