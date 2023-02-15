@@ -1,7 +1,7 @@
 import { $, component$, useContext, useStylesScoped$ } from "@builder.io/qwik";
+import { ThemeContext } from "~/root";
 import { QwikLogo } from "../icons/qwik";
 import styles from "./header.css?inline";
-import { ThemeContext } from "~/routes/layout";
 
 export default component$(() => {
   useStylesScoped$(styles);
