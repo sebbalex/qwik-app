@@ -1,0 +1,1 @@
+import{I as l,H as s}from"./q-a27abfa1.js";import{getPages as e}from"./q-4112e924.js";const o=()=>l(s,{children:[l("h1",{class:"text-3xl pb-5",children:"blog list"}),l("div",{class:"flex flex-col space-y-5 w-96",children:e()})]},"YU_1");export{o as s_0RuWJF374SY};
