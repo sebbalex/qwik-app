@@ -1,6 +1,7 @@
 import type { JSXNode } from "@builder.io/qwik";
 import { component$ } from "@builder.io/qwik";
 import {data, indexData} from "../../data";
+import { Speak, $translate as t } from 'qwik-speak';
 
 export const getPages = () => {
   const links: JSXNode[] = [];
@@ -16,7 +17,7 @@ export const getPages = () => {
 
 export default component$(() => (
   <>
-    <h1 class="text-3xl pb-5">blog list</h1>
+    <h1 class="text-3xl pb-5">{t('blog.title')}</h1>
     <div class="flex flex-col space-y-5 w-96">{getPages()}</div>
   </>
 ));
