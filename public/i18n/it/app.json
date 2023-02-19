@@ -1,16 +1,11 @@
 {
   "app": {
-    "changeLocale": "Cambia località",
+    "changeLocale": "Change language",
     "nav": {
       "home": "Home",
       "page": "Pagina"
     },
     "subtitle": "Traduci le tue app Qwik in qualsiasi lingua",
     "title": "Qwik Speak"
-  },
-  "blog": {
-    "title": "Blog articles list ita"
-  },
-  "home": {},
-  "post": {}
+  }
 }

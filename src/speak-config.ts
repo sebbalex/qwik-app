@@ -4,18 +4,29 @@ import type { LoadTranslationFn, SpeakConfig, TranslationFn } from "qwik-speak";
 
 export const config: SpeakConfig = {
   defaultLocale: {
-    lang: "en-US",
-    currency: "USD",
-    timeZone: "America/Los_Angeles",
+    lang: "it",
+    currency: "EUR",
+    timeZone: "Europe/Rome",
+    units: { length: "kilometer" },
   },
   supportedLocales: [
-    { lang: "it-IT", currency: "EUR", timeZone: "Europe/Rome" },
-    { lang: "en-US", currency: "USD", timeZone: "America/Los_Angeles" },
+    {
+      lang: "it",
+      currency: "EUR",
+      timeZone: "Europe/Rome",
+      units: { length: "kilometer" },
+    },
+    {
+      lang: "en",
+      currency: "USD",
+      timeZone: "America/Los_Angeles",
+      units: { length: "mile" },
+    },
   ],
-  assets: ["app"],
+  assets: ["app", "blog"],
 };
 
-export const loadTranslation$: LoadTranslationFn = $(
+export const loadTranslation2$: LoadTranslationFn = $(
   async (lang: string, asset: string, origin?: string) => {
     let url = "";
     // Absolute urls on server
@@ -33,6 +44,21 @@ export const loadTranslation$: LoadTranslationFn = $(
       console.log("loadTranslation$ error: ", error);
     }
     return data;
+  }
+);
+
+export const loadTranslation$: LoadTranslationFn = $(
+  async (lang: string, asset: string, origin?: string) => {
+    if (import.meta.env.DEV || asset === "runtime") {
+      let url = "";
+      // Absolute urls on server
+      if (isServer && origin) {
+        url = origin;
+      }
+      url += `/i18n/${lang}/${asset}.json`;
+      const response = await fetch(url);
+      return response.json();
+    }
   }
 );
 

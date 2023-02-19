@@ -1,6 +1,7 @@
 import { $, component$, useContext, useStylesScoped$ } from "@builder.io/qwik";
 import { ThemeContext } from "~/root";
 import { QwikLogo } from "../icons/qwik";
+import { ChangeLocale } from "./change-locale";
 import styles from "./header.css?inline";
 
 export default component$(() => {
@@ -21,6 +22,7 @@ export default component$(() => {
         </a>
       </div>
       <ul>
+        <li><ChangeLocale /></li>
         <li>
           {/* Light and dark theme selection toogle **/}
           <label class="cursor-pointer label">

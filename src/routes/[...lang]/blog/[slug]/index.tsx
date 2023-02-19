@@ -2,6 +2,7 @@ import { component$ } from "@builder.io/qwik";
 import type { DocumentHead } from "@builder.io/qwik-city";
 import { loader$ } from "@builder.io/qwik-city";
 import { Link } from "@builder.io/qwik-city";
+import Frontmatter from "~/components/blog/frontmatter";
 import { Cart } from "~/components/icons/cart";
 import { Facebook } from "~/components/icons/facebook";
 import { Instagram } from "~/components/icons/instagram";
@@ -9,24 +10,29 @@ import { Mail } from "~/components/icons/mail";
 import { Pinterest } from "~/components/icons/pinterest";
 import { Sharing } from "~/components/icons/sharing";
 import { Rating } from "~/components/rating";
-import type { Post } from "~/types/post";
-import all_data from "../../../data";
+import type { Langs, Post } from "~/types/post";
+import all_data from "../../../../data";
 
-export const getDataFromSlug = loader$(({ params: { slug }, error }) => {
-  const year = slug.match(/\d{4}$/) ? [slug.match(/\d{4}$/)].toString() : 2023;
-  const data = all_data[year];
-  if (!data) throw error(404, "no data found!");
-  return data;
-});
+export const getDataFromSlug = loader$(
+  ({ params: { slug }, error, locale }) => {
+    const lang: Langs =
+      locale() === "it" ? "it" : locale() === "en" ? "en" : "en";
+    const year = slug.match(/\d{4}$/)
+      ? [slug.match(/\d{4}$/)].toString()
+      : 2023;
+    const data = all_data[lang][year];
+    if (!data) throw error(404, "no data found!");
+    return data; //this must return serializable data!
+  }
+);
 
 export default component$(() => {
   const { value: data } = getDataFromSlug.use();
 
-  const { Frontmatter } = data;
   const posts: Post[] = data.posts;
   return (
     <div class="p-3 lg:p-8 gap-8 w-full max-w-full my-0 mx-auto flex flex-col">
-      <Frontmatter />
+      <Frontmatter {...data.frontmatter} />
       <div id="social" class="flex space-x-1">
         <Facebook />
         <Instagram />
@@ -50,7 +56,7 @@ export default component$(() => {
                     <div class="badge badge-secondary uppercase">new</div>
                   )}
                 </h2>
-                <p>{post.description.it}</p>
+                <p>{post.description}</p>
                 <hr class="pt-5" />
                 <h2 class="card-title">Specification</h2>
                 <p>{post.specification}</p>
