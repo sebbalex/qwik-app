@@ -20,6 +20,11 @@ export interface Data {
 }
 
 export type Langs = "it" | "en";
+
+export type LabelLangs = {
+  [key in Langs]: string;
+};
+
 export type LocalizedData = {
   [key in Langs]: Data;
 };

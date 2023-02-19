@@ -1,7 +1,6 @@
 import { $, component$, useTask$ } from "@builder.io/qwik";
 import { useLocation, useNavigate } from "@builder.io/qwik-city";
 
-import type { SpeakLocale } from "qwik-speak";
 import {
   changeLocale,
   $translate as t,
@@ -9,6 +8,7 @@ import {
   useSpeakLocale,
   useSpeakConfig,
 } from "qwik-speak";
+import { LabelLangs } from "~/types/post";
 
 export const ChangeLocale = component$(() => {
   const loc = useLocation();
@@ -17,6 +17,11 @@ export const ChangeLocale = component$(() => {
   const ctx = useSpeakContext();
   const locale = useSpeakLocale();
   const config = useSpeakConfig();
+
+  const labels: LabelLangs = {
+    it: "Italian 🇮🇹",
+    en: "English 🇺🇸"
+  }
 
   // Handle localized routing
   useTask$(async ({ track }) => {
@@ -65,7 +70,7 @@ export const ChangeLocale = component$(() => {
           {t("app.changeLocale")}
         </option>
         {config.supportedLocales.map((value) => (
-          <option>{value.lang}</option>
+          <option>{labels[value.lang]}</option>
         ))}
       </select>
     </div>
