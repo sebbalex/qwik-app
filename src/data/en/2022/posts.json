@@ -1,0 +1,29 @@
+{
+  "frontmatter": {
+    "title": "[EN] Best bikepacking bags 2022 - top tube, seatpost and much more to enjoy your trip with your bike",
+    "subtitle": "Best bikepacking bags 2022 - top tube, seatpost and much more to enjoy your trip with your bike",
+    "username": "user",
+    "published_at": "Jan 27, 2022"
+  },
+  "items": [
+    {
+      "id": 1,
+      "title": "[EN] Top tube bag",
+      "description": "[EN] Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla! Maiores et perferendis eaque, exercitationem praesentium nihil.",
+      "specification": "[EN] Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla! Maiores et perferendis eaque, exercitationem praesentium nihil.",
+      "author": "John Adam",
+      "avatar": "/assets/images/user.png",
+      "slug": "#",
+      "image": "/assets/images/mountains.jpg",
+      "cta": "",
+      "created_at": "Jan 23",
+      "motto": "[EN] The best bikepacking bags overall",
+      "pros": ["light", "price", "beauty"],
+      "cons": ["difficult to mount", "spaces", "tiny"],
+      "review": "[EN] Lorem ipsum dolor sit amet, consectetur adipisicing elit",
+      "stars": 3.5,
+      "tags": ["top tube", "light"],
+      "isNew": false
+    }
+  ]
+}

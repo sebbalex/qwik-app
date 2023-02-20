@@ -13,6 +13,8 @@ import {
 } from "@builder.io/qwik-city";
 import { isBrowser } from "@builder.io/qwik/build";
 import { RouterHead } from "./components/router-head/router-head";
+import { QwikSpeakProvider } from 'qwik-speak';
+import { config, translationFn } from './speak-config';
 
 import globalStyles from "./global.css?inline";
 
@@ -35,6 +37,7 @@ export default component$(() => {
   });
   useContextProvider(ThemeContext, state);
   return (
+    <QwikSpeakProvider config={config} translationFn={translationFn}>
     <QwikCityProvider>
       <head>
         <meta charSet="utf-8" />
@@ -46,5 +49,6 @@ export default component$(() => {
         <ServiceWorkerRegister />
       </body>
     </QwikCityProvider>
+    </QwikSpeakProvider>
   );
 });

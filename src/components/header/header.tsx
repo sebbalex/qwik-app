@@ -1,6 +1,7 @@
 import { $, component$, useContext, useStylesScoped$ } from "@builder.io/qwik";
 import { ThemeContext } from "~/root";
 import { QwikLogo } from "../icons/qwik";
+import { ChangeLocale } from "./change-locale";
 import styles from "./header.css?inline";
 
 export default component$(() => {
@@ -15,12 +16,15 @@ export default component$(() => {
   return (
     <header class="navbar flex justify-between bg-base-100 z-10 shadow-md">
       <div class="logo">
-        Logo
-        <a href="https://qwik.builder.io/" target="_blank" title="qwik">
+        Home
+        <a href="/" title="home">
           <QwikLogo />
         </a>
       </div>
       <ul>
+        <li>
+          <ChangeLocale />
+        </li>
         <li>
           {/* Light and dark theme selection toogle **/}
           <label class="cursor-pointer label">

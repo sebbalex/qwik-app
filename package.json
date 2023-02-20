@@ -20,7 +20,8 @@
     "lint": "eslint \"src/**/*.ts*\"",
     "preview": "qwik build preview && vite preview --open",
     "start": "vite --open --mode ssr",
-    "qwik": "qwik"
+    "qwik": "qwik",
+    "qwik-speak-extract": "qwik-speak-extract --supportedLangs=en-US,it-IT"
   },
   "devDependencies": {
     "@builder.io/qwik": "0.17.5",
@@ -38,6 +39,7 @@
     "node-fetch": "3.3.0",
     "postcss": "^8.4.21",
     "prettier": "2.8.4",
+    "qwik-speak": "^0.6.1",
     "tailwindcss": "^3.2.6",
     "typescript": "4.9.5",
     "undici": "5.19.1",
