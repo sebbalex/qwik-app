@@ -1,0 +1,1 @@
+import{$ as t,Q as o,W as e,_ as s}from"./q-a27abfa1.js";const r=t("theme"),a=o(e(()=>s(()=>import("./q-5e0e30d2.js"),["build/q-5e0e30d2.js","build/q-a27abfa1.js","build/q-90d63223.js","build/q-fd983f7d.js"]),"s_3sccYCDd1Z0"));export{r as ThemeContext,a as default};
