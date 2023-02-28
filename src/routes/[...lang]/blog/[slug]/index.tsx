@@ -3,6 +3,7 @@ import type { DocumentHead } from "@builder.io/qwik-city";
 import { loader$ } from "@builder.io/qwik-city";
 import { Link } from "@builder.io/qwik-city";
 import Frontmatter from "~/components/blog/frontmatter";
+import { Back } from "~/components/icons/back";
 import { Cart } from "~/components/icons/cart";
 import { Facebook } from "~/components/icons/facebook";
 import { Instagram } from "~/components/icons/instagram";
@@ -32,6 +33,14 @@ export default component$(() => {
   const posts: Post[] = data.posts;
   return (
     <div class="p-3 lg:p-8 gap-8 w-full max-w-full my-0 mx-auto flex flex-col">
+      <a href="/blog">
+        <div class="flex flex-row align-middle">
+          <Back />
+          <div class="flex pl-3" style="height: 64px; align-items: center">
+            {"Blog"}
+          </div>
+        </div>
+      </a>
       <Frontmatter {...data.frontmatter} />
       <div id="social" class="flex space-x-1">
         <Facebook />

@@ -16,6 +16,8 @@ export interface Data {
     slug: string;
     title: string;
     description: string;
+    splash: string;
+    splash_credits: string;
   };
 }
 
