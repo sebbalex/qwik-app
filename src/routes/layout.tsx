@@ -9,7 +9,7 @@ export default component$(() => {
     <div class="min-h-screen">
       <main>
         <Header />
-        <section class="container px-4 py-4 min-h-[520px]">
+        <section class="px-4 py-4 min-h-[520px]">
           <Slot />
         </section>
       </main>
