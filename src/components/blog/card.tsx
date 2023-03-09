@@ -13,7 +13,7 @@ export interface CardProps {
 
 export const Card = component$(
   ({ title, url, alt, description, ctaText, cta, isNew, tags }: CardProps) => (
-    <div class="card w-96 bg-base-100 shadow-xl">
+    <div class="card w-96 bg-base-100 shadow-xl mb-5 md:mb-0">
       <figure>
         <img src={url} alt={alt} />
       </figure>

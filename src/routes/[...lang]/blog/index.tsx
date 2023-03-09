@@ -37,7 +37,7 @@ export default component$(() => {
         alt="Photo by Enric Cruz López: https://www.pexels.com/photo/bikes-parked-on-city-embankment-near-canal-and-old-buildings-on-cloudy-day-6039194/"
         ctaText="vai"
       />
-      <div class="flex flex-row space-x-5 py-5 px-5">
+      <div class="flex flex-col md:flex-row md:space-x-5 py-5 px-2 md:px-5">
         {getPosts(locale.lang)}
       </div>
     </Speak>
