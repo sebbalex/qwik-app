@@ -32,13 +32,9 @@ export const Card = component$(
           {isTrending && <div class="badge badge-secondary">TRENDING</div>}
         </h2>
         <p>{description}</p>
-        <div class="card-actions justify-end">
-          {tags?.map((t) => (
-            <div class="badge badge-outline">{t}</div>
-          ))}
-        </div>
-        <div class="mt-3">
-          {author} <span class="text-red-500">-</span> {publish_date}
+        <div class="mt-3 mb-2 uppercase prose prose-slate prose-sm">
+          {author} <span class="text-red-500 text-xl">&nbsp;-&nbsp;</span>{" "}
+          {publish_date}
         </div>
         <div class="flex flex-row justify-end">
           <Facebook />
@@ -50,6 +46,11 @@ export const Card = component$(
           <Sharing />
           <span class="mr-2" />
           <Mail />
+        </div>
+        <div class="card-actions justify-end mt-3">
+          {tags?.map((t) => (
+            <div class="badge badge-outline">{t}</div>
+          ))}
         </div>
       </div>
     </div>

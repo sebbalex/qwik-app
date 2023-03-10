@@ -20,6 +20,7 @@ export const dataEN: Data = {
     alt: "Best bikepacking bags 2022",
     splash_credits:
       "Photo by Maarten van den Heuvel: https://www.pexels.com/photo/bikes-in-parking-space-on-street-4254893/",
+    tags: ["cool", "fresh"],
   },
   "2023": {
     frontmatter: en_posts_2023.frontmatter,
@@ -51,6 +52,7 @@ export const dataIT: Data = {
     alt: "Best bikepacking bags 2022",
     splash_credits:
       "Photo by Maarten van den Heuvel: https://www.pexels.com/photo/bikes-in-parking-space-on-street-4254893/",
+    tags: ["cool", "fresh"],
   },
   "2023": {
     frontmatter: it_posts_2023.frontmatter,
@@ -73,6 +75,9 @@ export const localizedData: LocalizedData = {
   it: dataIT,
 };
 
+// TO BE REMOVED
+// this is used for meta data in pages for SEO optimizations
+// see blog/index
 export const indexData: IndexData = {
   title: "Blog for bikepacking",
   description: "Best bikepacking bags ever",
