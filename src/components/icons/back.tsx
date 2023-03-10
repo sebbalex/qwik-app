@@ -1,7 +1,7 @@
 export const Back = () => (
   <svg
-    width="64px"
-    height="64px"
+    width="36px"
+    height="36px"
     viewBox="0 0 512 512"
     xmlns="http://www.w3.org/2000/svg"
     fill="#000000"

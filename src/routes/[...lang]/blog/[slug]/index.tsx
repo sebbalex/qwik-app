@@ -36,7 +36,7 @@ export default component$(() => {
       <a href="/blog">
         <div class="flex flex-row align-middle">
           <Back />
-          <div class="flex pl-3" style="height: 64px; align-items: center">
+          <div class="flex pl-3" style="height: 36px; align-items: center">
             {"Blog"}
           </div>
         </div>
