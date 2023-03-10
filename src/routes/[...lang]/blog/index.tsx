@@ -14,13 +14,9 @@ export const getPosts = (l: string) => {
       <Card
         title={v.title}
         description={v.description}
-        ctaText={"Click"}
         cta={v.slug}
         url={v.splash}
       />
-      // <a href={`${v.slug}/`} class="btn">
-      //   {v.title}
-      // </a>
     );
   }
   return links;
@@ -33,7 +29,7 @@ export default component$(() => {
       <HeroImage
         title={t("blog.title")}
         description={t("blog.desc")}
-        url="/assets/images/blog-hero.jpg"
+        url="/assets/images/blog-hero.webp"
         alt="Photo by Enric Cruz López: https://www.pexels.com/photo/bikes-parked-on-city-embankment-near-canal-and-old-buildings-on-cloudy-day-6039194/"
         ctaText="vai"
       />

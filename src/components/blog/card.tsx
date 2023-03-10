@@ -10,7 +10,7 @@ export interface CardProps {
   alt?: string;
   title: string;
   description: string;
-  ctaText: string;
+  ctaText?: string;
   cta?: string;
   isNew?: boolean;
   isTrending?: boolean;
