@@ -12,10 +12,7 @@ export const getPosts = (l: string) => {
   for (const [, v] of Object.entries(localizedData[lang])) {
     links.push(
       <Card
-        title={v.title}
-        description={v.description}
-        cta={v.slug}
-        url={v.splash}
+        {...v}
       />
     );
   }

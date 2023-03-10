@@ -9,16 +9,24 @@ export interface Frontmatter {
   subtitle: string;
   published_at: string;
 }
+export interface CardProps {
+  slug: string;
+  title: string;
+  publish_date: string;
+  author: string;
+  description: string;
+  splash: string;
+  alt: string;
+  isNew?: string;
+  isTrending?: string;
+  tags?: string[];
+  splash_credits: string;
+}
 export interface Data {
   [key: string]: {
     frontmatter: Frontmatter;
     posts: Post[];
-    slug: string;
-    title: string;
-    description: string;
-    splash: string;
-    splash_credits: string;
-  };
+  } & CardProps;
 }
 
 export type Langs = "it" | "en";
