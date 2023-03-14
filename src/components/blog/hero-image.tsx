@@ -5,8 +5,8 @@ export interface HeroProps {
   alt?: string;
   title: string;
   description: string;
-  ctaText: string;
-  cta?: () => void;
+  ctaText?: string;
+  cta?: string;
 }
 
 export const HeroImage = component$(
@@ -18,9 +18,9 @@ export const HeroImage = component$(
           <h1 class="mb-5 text-5xl font-bold">{title}</h1>
           <p class="mb-5">{description}</p>
           {cta && ctaText && (
-            <button class="btn btn-primary" onClick$={cta}>
+            <a class="btn btn-primary" href={cta}>
               {ctaText}
-            </button>
+            </a>
           )}
         </div>
       </div>
