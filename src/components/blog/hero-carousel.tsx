@@ -15,7 +15,7 @@ export const HeroCarousel = component$((items: HeroCarouselProps) => (
       const { title, url, cta, description } = items[v];
       return (
         <div id={v} class="carousel-item relative w-full">
-          <img src={url} class="w-full" />
+          <img src={url} class="object-cover h-96 w-full" alt={title} />
           <div class="absolute flex justify-center transform -translate-y-1/2 left-5 right-5 top-1/2">
             <div class="hero-content text-center text-neutral-content">
               <a href={cta}>
