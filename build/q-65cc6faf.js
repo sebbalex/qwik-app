@@ -1,1 +1,0 @@
-import{a as t,$ as l,b as o}from"./q-fd983f7d.js";import{I as s,a as e}from"./q-a27abfa1.js";import{getPosts as r}from"./q-1857dc7d.js";const p=()=>{const a=t();return s(o,{assets:["blog"],children:[s("h1",{class:"text-3xl pb-5",children:l("blog.title")}),s("div",{class:"flex flex-col space-y-5 w-96",children:r(a.lang)})],[e]:{assets:e}},"Yn_1")};export{p as s_WiOXv30Ec4Y};

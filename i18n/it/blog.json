@@ -1,5 +1,8 @@
 {
   "blog": {
-    "title": "Blog articles list ita blog it"
+    "title": "Blog lista articoli",
+    "desc": "desc",
+    "recent_text": "Articoli recenti",
+    "recent_subtext": "Articoli più recenti da ..."
   }
 }
