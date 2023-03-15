@@ -1,0 +1,3 @@
+import{X as e,l as s}from"./q-7644004b.js";const o=[{text:"Last year’s snowfall",id:"last-years-snowfall",level:1}],i=void 0;function t(a){const n=Object.assign({h1:"h1",a:"a",span:"span",p:"p"},a.components);return e(s,{children:[e(n.h1,{id:"last-years-snowfall",children:[e(n.a,{"aria-hidden":"true",tabIndex:"-1",href:"#last-years-snowfall",children:e(n.span,{className:"icon icon-link"})}),"Last year’s snowfall"]}),`
+`,e(n.p,{children:"This is a simple hello md world component."}),`
+`,e(n.p,{children:"ciaone"})]})}function r(a={}){const{wrapper:n}=a.components||{};return n?e(n,Object.assign({},a,{children:e(t,a)})):t(a)}export{r as default,i as frontmatter,o as headings};

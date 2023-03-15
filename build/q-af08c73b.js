@@ -1,1 +1,0 @@
-import{m as i}from"./q-d8a126a4.js";const a=async(n,e,s)=>{let o="";o+=`/i18n/${n}/${e}.json`;let r=null;try{r=await(await fetch(o)).json()}catch(t){console.log("loadTranslation$ error: ",t)}return r};export{i as _hW,a as s_CUHldtH000k};

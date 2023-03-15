@@ -1,1 +1,0 @@
-import{I as n}from"./q-d8a126a4.js";const l=a=>{let t="";for(let s=1;s<=10;s++){const e="bg-yellow-300 mask mask-star-2 mask-half-"+((s%2===0?1:0)+1),r=s===a.count*2?"checked":"";t+=`<input type="radio" class="${e}" ${r} />`}return n("div",{class:"rating rating-lg rating-half",dangerouslySetInnerHTML:t},"ug_0")};export{l as s_L8LpCW0BhPg};
