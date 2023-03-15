@@ -24,10 +24,10 @@
     "qwik-speak-extract": "qwik-speak-extract --supportedLangs=en-US,it-IT"
   },
   "devDependencies": {
-    "@builder.io/qwik": "0.17.5",
-    "@builder.io/qwik-city": "0.1.1",
+    "@builder.io/qwik": "0.21.0",
+    "@builder.io/qwik-city": "0.5.3",
     "@tailwindcss/typography": "^0.5.9",
-    "@types/eslint": "8.21.0",
+    "@types/eslint": "8.21.2",
     "@types/node": "^18.13.0",
     "@types/node-fetch": "latest",
     "@typescript-eslint/eslint-plugin": "5.52.0",
@@ -39,7 +39,7 @@
     "node-fetch": "3.3.0",
     "postcss": "^8.4.21",
     "prettier": "2.8.4",
-    "qwik-speak": "^0.6.1",
+    "qwik-speak": "^0.7.3",
     "tailwindcss": "^3.2.6",
     "typescript": "4.9.5",
     "undici": "5.19.1",

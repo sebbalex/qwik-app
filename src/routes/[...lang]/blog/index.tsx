@@ -46,8 +46,8 @@ export default component$(() => {
         alt="Photo by Enric Cruz López: https://www.pexels.com/photo/bikes-parked-on-city-embankment-near-canal-and-old-buildings-on-cloudy-day-6039194/"
         ctaText="vai"
       /> */}
-      <div class="container text-center">
-        <div class="py-10">
+      <div class="container">
+        <div class="py-10 text-center">
           <h2 class="min-w-full prose text-5xl pb-4">
             {t("blog.recent_text")}
           </h2>

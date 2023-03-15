@@ -1,6 +1,6 @@
 import { component$ } from "@builder.io/qwik";
 import type { DocumentHead } from "@builder.io/qwik-city";
-import { loader$ } from "@builder.io/qwik-city";
+import { routeLoader$ } from "@builder.io/qwik-city";
 import { Link } from "@builder.io/qwik-city";
 import Frontmatter from "~/components/blog/frontmatter";
 import { Back } from "~/components/icons/back";
@@ -14,7 +14,7 @@ import { Rating } from "~/components/rating";
 import type { Langs, Post } from "~/types/post";
 import all_data from "../../../../data";
 
-export const getDataFromSlug = loader$(
+export const getDataFromSlug = routeLoader$(
   ({ params: { slug }, error, locale }) => {
     const lang: Langs =
       locale() === "it" ? "it" : locale() === "en" ? "en" : "en";
@@ -129,8 +129,8 @@ export default component$(() => {
   );
 });
 
-export const head: DocumentHead = ({ getData }) => {
-  const data = getData(getDataFromSlug);
+export const head: DocumentHead = ({ resolveValue }) => {
+  const data = resolveValue(getDataFromSlug);
   return {
     title: data.title,
     meta: [
