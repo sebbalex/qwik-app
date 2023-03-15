@@ -6,10 +6,10 @@ import { config } from "../speak-config";
 
 export default component$(() => {
   return (
-    <div class="min-h-screen">
-      <main>
+    <div class="flex flex-col min-h-screen">
+      <main class="flex-1">
         <Header />
-        <section class="min-h-[520px]">
+        <section>
           <Slot />
         </section>
       </main>

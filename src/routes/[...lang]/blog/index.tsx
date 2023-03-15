@@ -46,14 +46,18 @@ export default component$(() => {
         alt="Photo by Enric Cruz López: https://www.pexels.com/photo/bikes-parked-on-city-embankment-near-canal-and-old-buildings-on-cloudy-day-6039194/"
         ctaText="vai"
       /> */}
-      <div class="py-5 text-center">
-        <h2 class="prose text-5xl pb-4">{t("blog.recent_text")}</h2>
-        <h3 class="min-w-full prose prose-slate prose-md">
-          {t("blog.recent_subtext")}
-        </h3>
-      </div>
-      <div class="flex flex-col md:flex-row md:space-x-5 py-5 px-2 md:px-5">
-        {getPosts(locale.lang)}
+      <div class="container text-center">
+        <div class="py-10">
+          <h2 class="min-w-full prose text-5xl pb-4">
+            {t("blog.recent_text")}
+          </h2>
+          <h3 class="min-w-full prose prose-slate prose-md">
+            {t("blog.recent_subtext")}
+          </h3>
+        </div>
+        <div class="flex flex-col md:flex-row md:space-x-5 py-5 px-2 md:px-5">
+          {getPosts(locale.lang)}
+        </div>
       </div>
     </Speak>
   );
